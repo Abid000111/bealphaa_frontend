@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useCartContext } from "../Context/cart_context";
 import CartItem from "./CartItem";
 import FormatPrice from "../Helpers/FormatPrice";
@@ -36,7 +36,8 @@ const AddToCartScreen = () => {
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
-	}, [cartScreen]);
+	// }, [cartScreen]);
+	});
 
 	return (
 		<>

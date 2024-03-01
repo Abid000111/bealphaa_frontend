@@ -1,3 +1,6 @@
+/* eslint-disable indent */
+/* eslint-disable no-case-declarations */
+
 const productReducer = (state, action) => {
 	switch (action.type) {
 		case "SET_LOADING":
@@ -50,30 +53,6 @@ const productReducer = (state, action) => {
 				...state,
 				filter_products: [...action.payload.Products]
 			};
-
-		// case "GET_SORT_VALUE":
-		// 	let userSortValue = document.getElementById("sort");
-		// 	let sort_value = userSortValue.options[userSortValue.selectedIndex].value;
-		// 	console.log(sort_value);
-		// 	return {
-		// 		...state,
-		// 		sorting_value: sort_value
-		// 	};
-
-		// case "SORTING_PRODUCTS":
-		// 	let newSortData;
-		// 	let tempSortProduct = [...action.payload];
-
-		// 	if (state.sorting_value === "a-z") {
-		// 		newSortData = tempSortProduct.sort((a, b) => {
-		// 			return a.name.localeComapre(b.name);
-		// 		});
-		// 	}
-
-		// 	return {
-		// 		...state,
-		// 		filter_products: newSortData
-		// 	};
 
 		default:
 			return state;

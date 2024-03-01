@@ -4,8 +4,16 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../Context/cart_context";
 
 const AddToCart = ({ product, image }) => {
-	const { addToCart, orderInfo, order, cart, buyClick, cartScreen, setCartScreen } = useCartContext();
-	const { name, price, id, colors, size, stock } = product;
+	const {
+		addToCart,
+		orderInfo,
+		order,
+		cart,
+		buyClick,
+		cartScreen,
+		setCartScreen
+	} = useCartContext();
+	const { name, price, id, colors, size, stock, model_link } = product;
 	const [color, setColor] = useState(colors[0]);
 	const [_size, set_size] = useState(size[0]);
 	// console.log("product size =>", _size);
@@ -37,6 +45,8 @@ const AddToCart = ({ product, image }) => {
 		buyClick();
 	};
 
+	console.log("model_link ==>", model_link)
+
 	return (
 		<>
 			<div id="product-size">
@@ -48,7 +58,7 @@ const AddToCart = ({ product, image }) => {
 								<button
 									className={_size === curSize ? "size-box active-size-box" : "size-box"}
 									key={index}
-									onClick={(e) => set_size(curSize)}
+									onClick={() => set_size(curSize)}
 								>
 									{curSize}
 								</button>
@@ -67,7 +77,7 @@ const AddToCart = ({ product, image }) => {
 								key={index}
 								className={color === curColor ? "color-box active" : "color-box"}
 								style={{ backgroundColor: curColor }}
-								onClick={(e) => setColor(curColor)}
+								onClick={() => setColor(curColor)}
 								// onClick={() => handleColorClick(curColor)}
 							></button>
 						);
@@ -84,11 +94,11 @@ const AddToCart = ({ product, image }) => {
 			</div>
 
 			<div>
-				<Link to="#">
+				<a href={model_link} target="_blank">
 					<button type="button" id="product-screen-3D-model">
 						View 3D Model
 					</button>
-				</Link>
+				</a>
 
 				<button
 					id="add-to-cart"

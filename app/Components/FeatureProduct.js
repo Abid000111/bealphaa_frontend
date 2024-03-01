@@ -3,7 +3,7 @@ import { useProductContext } from "../Context/productcontext";
 import ThapaProduct from "./ThapaProduct";
 
 const FeatureProduct = () => {
-	const { isLoading, featureProducts } = useProductContext();
+	const { featureProducts } = useProductContext();
 	// console.log("Feature Product => ", featureProducts);
 
 	return (

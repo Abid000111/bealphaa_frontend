@@ -1,3 +1,4 @@
+// import Image from "next/image";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -18,19 +19,19 @@ const Home = () => {
 				<div className="feature-prev-div">
 					<div className="feature-container">
 						<div>
-							<img src="/feature1.jpg" />
+							<img src="/feature1.jpg" alt="image" />
 						</div>
 						<div>
-							<img src="/feature2.jpg" />
+							<img src="/feature2.jpg" alt="image" />
 						</div>
 						<div>
-							<img src="/feature3.jpg" />
+							<img src="/feature3.jpg" alt="image" />
 						</div>
 						<div>
-							<img src="/feature4.jpg" />
+							<img src="/feature4.jpg" alt="image" />
 						</div>
 						<div>
-							<img src="/feature5.jpg" />
+							<img src="/feature5.jpg" alt="image" />
 						</div>
 					</div>
 				</div>

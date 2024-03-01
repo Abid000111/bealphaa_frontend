@@ -1,38 +1,77 @@
-import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import {
+	createContext,
+	useContext,
+	useEffect,
+	useReducer,
+	useState
+} from "react";
 import reducer from "../reducer/cartReducer";
 
 const CartContext = createContext();
 
+// const getLocalCartData = () => {
+// 	let localCartData = localStorage.getItem("alphaaCart");
+// 	if (localCartData === null) {
+// 		return [];
+// 	} else {
+// 		return JSON.parse(localCartData);
+// 	}
+// };
+
 const getLocalCartData = () => {
-	let localCartData = localStorage.getItem("alphaaCart");
-	// if (localCartData === []){
-	// if (localCartData.length){
-	if (localCartData === null) {
-		return [];
+	if (typeof window !== "undefined") {
+		let localCartData = localStorage.getItem("alphaaCart");
+		if (localCartData === null) {
+			return [];
+		} else {
+			return JSON.parse(localCartData);
+		}
 	} else {
-		return JSON.parse(localCartData);
+		return [];
 	}
 };
+
+// const getLocalOrderData = () => {
+// 	let localOrderData = localStorage.getItem("alphaaOrder");
+// 	if (localOrderData === null) {
+// 		return [];
+// 	} else {
+// 		return JSON.parse(localOrderData);
+// 	}
+// };
 
 const getLocalOrderData = () => {
-	let localOrderData = localStorage.getItem("alphaaOrder");
-	// if (localCartData === []){
-	// if (localCartData.length){
-	if (localOrderData === null) {
-		return [];
+	if (typeof window !== "undefined") {
+		let localOrderData = localStorage.getItem("alphaaOrder");
+		if (localOrderData === null) {
+			return [];
+		} else {
+			return JSON.parse(localOrderData);
+		}
 	} else {
-		return JSON.parse(localOrderData);
+		return [];
 	}
 };
 
+// const getLocalOrderArray = () => {
+// 	let localOrderArray = localStorage.getItem("alphaaArray");
+// 	if (localOrderArray === null) {
+// 		return [];
+// 	} else {
+// 		return JSON.parse(localOrderArray);
+// 	}
+// };
+
 const getLocalOrderArray = () => {
-	let localOrderArray = localStorage.getItem("alphaaArray");
-	// if (localCartData === []){
-	// if (localCartData.length){
-	if (localOrderArray === null) {
-		return [];
+	if (typeof window !== "undefined") {
+		let localOrderArray = localStorage.getItem("alphaaArray");
+		if (localOrderArray === null) {
+			return [];
+		} else {
+			return JSON.parse(localOrderArray);
+		}
 	} else {
-		return JSON.parse(localOrderArray);
+		return [];
 	}
 };
 

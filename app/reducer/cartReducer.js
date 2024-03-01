@@ -7,7 +7,9 @@ const cartReducer = (state, action) => {
 		// tackle existing product
 
 		// let existingProduct = state.cart.find((curItem) => curItem.id == id + color);
-		let existingProduct = state.cart.find((curItem) => curItem.id == id + color + _size);
+		let existingProduct = state.cart.find(
+			(curItem) => curItem.id == id + color + _size
+		);
 
 		// console.log("exisiting product", existingProduct);
 
@@ -53,6 +55,7 @@ const cartReducer = (state, action) => {
 
 	if (action.type === "ORDER") {
 		let { name, color, _size, price, amount, image, product } = action.payload;
+		console.log(product);
 		return {
 			...state,
 			orderInfo: {
@@ -70,7 +73,7 @@ const cartReducer = (state, action) => {
 	if (action.type === "CHECKOUT_CLICK") {
 		return {
 			...state,
-			array: [],
+			// array: [],
 			array: [...state.cart]
 		};
 	}
@@ -78,7 +81,7 @@ const cartReducer = (state, action) => {
 	if (action.type === "BUY_CLICK") {
 		return {
 			...state,
-			array: [],
+			// array: [],
 			array: [state.orderInfo]
 		};
 	}

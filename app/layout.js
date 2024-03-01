@@ -1,9 +1,9 @@
 "use client";
 import "./globals.css";
-import React, { useEffect } from "react";
+import React from "react";
 import {
 	Route,
-	Routes,
+	// Routes,
 	RouterProvider,
 	createBrowserRouter,
 	createRoutesFromElements
@@ -36,8 +36,7 @@ import Home from "./Components/Home";
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<Root />}>
-
-			<Route path="" element={<Home/>} />
+			<Route path="" element={<Home />} />
 			<Route path="shop" element={<ShopScreen />} />
 			<Route path="contact" element={<ContactScreen />} />
 			<Route path="gratitude-kr-g4-43" element={<ThankYou />} />
@@ -67,6 +66,12 @@ export default function RootLayout({ children }) {
 					<link rel="icon" href="/favicon.ico?v=4" />
 					<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
 					<link rel="shortcut icon" href="/apple-touch-icon.png" />
+					<link rel="preconnect" href="https://fonts.googleapis.com" />
+					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+					<link
+						href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+						rel="stylesheet"
+					/>
 				</head>
 				<body>
 					<AppProvider>

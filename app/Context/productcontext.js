@@ -4,7 +4,8 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-const API = "http://localhost:5001/api/products";
+// const API = "http://localhost:5001/api/products";
+const API = "https://bealphaa-server.com.bealphaa.com/api/products";
 
 const initialState = {
 	isLoading: false,
@@ -50,8 +51,8 @@ const AppProvider = ({ children }) => {
 
 	// sorting function
 	// const sorting = () => {
-		// dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
-		// dispatch({ type: "GET_SORT_VALUE" });
+	// dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+	// dispatch({ type: "GET_SORT_VALUE" });
 	// };
 
 	// to sort the products

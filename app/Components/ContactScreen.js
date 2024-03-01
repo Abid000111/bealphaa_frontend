@@ -36,7 +36,7 @@ const ContactScreen = () => {
 							</div>
 							<div id="xyz4">
 								<p id="contact-screen-mobile">Mobile Number</p>
-								<p>+880 1708-006378</p>
+								<p>+880 1812669952</p>
 							</div>
 						</div>
 					</a>

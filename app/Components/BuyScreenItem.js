@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React  from "react";
 // import { useCartContext } from "../Context/cart_context";
 import FormatPrice from "../Helpers/FormatPrice";
+// import Image from "next/image";
 
 const BuyScreenItem = (curElem) => {
 	const { name, price, image, amount, color, size, total_price } = curElem;
@@ -8,6 +9,7 @@ const BuyScreenItem = (curElem) => {
 	// const [couponCode, setCouponCode] = useState("");
 	// console.log("orderInfo ...=>", orderInfo);
 	// console.log("cartInfo ...=>", cart);
+	console.log(total_price);
 
 	return (
 		<>
@@ -15,7 +17,7 @@ const BuyScreenItem = (curElem) => {
 				<div className="order-description-info">
 					<div className="order-img">
 						{/* <img src={orderInfo.image} /> */}
-						<img src={image} />
+						<img src={image} alt="#" />
 						<div className="order-product-quantity">{amount}</div>
 					</div>
 					<div>
@@ -27,7 +29,7 @@ const BuyScreenItem = (curElem) => {
 								<div
 									style={{
 										backgroundColor: color,
-                                        border: "2px solid",
+										border: "2px solid",
 										height: "1rem",
 										width: "1rem",
 										borderRadius: "50px"

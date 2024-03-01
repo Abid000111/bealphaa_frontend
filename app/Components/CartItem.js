@@ -2,6 +2,7 @@ import React from "react";
 import FormatPrice from "../Helpers/FormatPrice";
 import CartAmountToggle from "./CartAmountToggle";
 import { useCartContext } from "../Context/cart_context";
+// import Image from "next/image";
 
 const CartItem = ({ name, id, image, color, price, size, amount }) => {
 	const { removeItem, setDecrease, setIncrease } = useCartContext();

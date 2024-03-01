@@ -1,10 +1,12 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // import Rating from "./Rating";
 import FormatPrice from "../Helpers/FormatPrice";
+// import Image from "next/image";
 
 const ThapaProduct = (curElem) => {
 	const { id, name, images, price, rating, reviews } = curElem;
+	console.log(id, rating, reviews);
 
 	return (
 		<>

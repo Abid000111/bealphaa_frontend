@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useProductContext } from "../Context/productcontext";
 import FormatPrice from "../Helpers/FormatPrice";
-import Rating from "./Rating";
+// import Rating from "./Rating";
 import AddToCart from "./AddToCart";
+// import Image from "next/image";
 
-const API = `http://localhost:5001/api/products`;
+const API = "https://bealphaa-server.com.bealphaa.com/api/products";
+// const API = "http://localhost:5001/api/products";
 
 const SingleProduct = () => {
 	const { getSingleProduct, isSingleLoading, singleProduct } =
@@ -26,6 +28,7 @@ const SingleProduct = () => {
 	// const [image, setImage] = useState(image1);
 
 	// console.log("image1 =>", image);
+	console.log(isSingleLoading);
 
 	const [downDescription, setDownDescription] = useState(true);
 	const toggleDescription = () => {
@@ -44,6 +47,7 @@ const SingleProduct = () => {
 
 	useEffect(() => {
 		getSingleProduct(`${API}?name=${name}`);
+		// }, []);
 	}, []);
 	// console.log("single product name...........=>", singleProduct);
 
@@ -67,12 +71,15 @@ const SingleProduct = () => {
 		description,
 		materials,
 		shipping,
+		// model_link,
 		images
 	} = singleProduct || {};
 	// console.log("iamges single =>", images);
-	// console.log("single product", singleProduct);
+	console.log("single product info ===>>>", singleProduct);
 
 	const buy = () => console.log("order...=>", singleProduct);
+	console.log(id, rating, reviews, images);
+	buy();
 
 	return (
 		<>
@@ -82,7 +89,7 @@ const SingleProduct = () => {
 					{/* <MyImage images={images}/> */}
 					{/* {images && images.length > 0 && <img src={image1} alt="Product" />} */}
 					<img loading="lazy" src={image1} alt="Product" />
-					
+
 					{/* <img src={image1} alt="Product" /> */}
 				</div>
 				<div id="product-screen-section-div2">
@@ -166,7 +173,7 @@ const SingleProduct = () => {
 						}}
 					>
 						<div className="product-screen-description-div1">
-							<img src="/Materials.png" />
+							<img src="/Materials.png" alt="image" />
 							<button>Materials</button>
 						</div>
 						<svg

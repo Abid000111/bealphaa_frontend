@@ -1,9 +1,12 @@
+/* eslint-disable indent */
+
 import React, { useState } from "react";
 import { useCartContext } from "../Context/cart_context";
 import BuyScreenItem from "./BuyScreenItem";
 import FormatPrice from "../Helpers/FormatPrice";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import Image from "next/image";
 
 const BuyScreen = () => {
 	const { cart, array, total_price, clearCart } = useCartContext();
@@ -95,8 +98,10 @@ const BuyScreen = () => {
 
 			// Send POST request to backend
 			// const response = await axios.post("http://localhost:5001/email", orderData);
-			const response = await axios.post("http://localhost:5001/email", orderData);
-			// http://localhost:5001/api/products/order
+			const response = await axios.post(
+				"https://bealphaa-server.com.bealphaa.com/email",
+				orderData
+			);
 
 			// Handle success response
 			console.log("email sending response ==>", response.data);
@@ -337,7 +342,8 @@ const BuyScreen = () => {
 										></div>
 									</div>
 									<div>bKash</div>
-									<img src="/bkash.png" />
+									{/* <img src="/bkash.png" /> */}
+									<img src="/bkash.png" alt="bkash" />
 								</div>
 								<div>(Personal: +880 1708006378)</div>
 								<div>(Pay the total amount)</div>
@@ -365,7 +371,7 @@ const BuyScreen = () => {
 										></div>
 									</div>
 									<div>Nagad</div>
-									<img src="/nagad.png" />
+									<img src="/nagad.png" alt="nagad" />
 								</div>
 								<div>(Personal: +880 1708006378)</div>
 								<div>(Pay the total amount)</div>

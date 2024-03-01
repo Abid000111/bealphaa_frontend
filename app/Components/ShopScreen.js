@@ -4,11 +4,11 @@ import ThapaProduct from "./ThapaProduct";
 import FeatureProduct from "./FeatureProduct";
 
 const ShopScreen = () => {
-	const { isLoading, products, sorting, filter_products } = useProductContext();
+	const { isLoading, products, filter_products } = useProductContext();
 
 	// console.log("Products => ", products);
 	console.log("Filter Products =>", filter_products);
-	console.log("products => ",products)
+	console.log("products => ",products);
 
 	return (
 		<>
